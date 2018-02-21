@@ -21,4 +21,34 @@ export class GithubService {
     // res stands for response. We are getting the response in json format.
     }
 
+    getUserGist() {
+        return this._http.get('https://api.github.com/users/' + this.username + '/gists')
+            .map(res => res.json());
+    // res stands for response. We are getting the response in json format.
+    }
+
+    getPublicGist() {
+        return this._http.get('https://api.github.com/gists/public')
+            .map(res => res.json());
+    // res stands for response. We are getting the response in json format.
+    }
+
+    createGist() {
+        return this._http.post('https://api.github.com/gists', 'newFile')
+            .map(res => res.json());
+    // res stands for response. We are getting the response in json format.
+    }
+
+    editGist() {
+        return this._http.patch('https://api.github.com/gists/:id' , 'files')
+            .map(res => res.json());
+    // res stands for response. We are getting the response in json format.
+    }
+
+    delUser() {
+        return this._http.delete('https://api.github.com/gists/:id')
+            .map(res => res.json());
+    // res stands for response. We are getting the response in json format.
+    }
+
 }
