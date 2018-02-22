@@ -9,11 +9,18 @@ moduleId: module.id,
 })
 export class HomeComponent  {
   user: Array<any>;
+  gist: Array<any>;
   // Inject the service as a dependency
   constructor( private _githubService: GithubService){
     this._githubService.getUser().subscribe(user => {
       // console.log(user);
       this.user = user;
     });
+
+    this._githubService.getPublicGist().subscribe(gist => {
+      // console.log(gist);
+      this.gist = gist;
+    });
+
   }
  }

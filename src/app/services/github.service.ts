@@ -10,7 +10,7 @@ import 'rxjs/add/operator/map';
 export class GithubService {
     private username:string;
 
-    constructor(private _http:Http){
+    constructor(private _http: Http) {
         console.log('Github Service Ready...');
         this.username = 'dmpire';
     }
@@ -33,13 +33,13 @@ export class GithubService {
     // res stands for response. We are getting the response in json format.
     }
 
-    createGist() {
+    createGist(files: any, description: string, pub: boolean) {
         return this._http.post('https://api.github.com/gists', 'newFile')
             .map(res => res.json());
     // res stands for response. We are getting the response in json format.
     }
 
-    editGist() {
+    editGist(files: any, description: string, content: string, filename: string) {
         return this._http.patch('https://api.github.com/gists/:id' , 'files')
             .map(res => res.json());
     // res stands for response. We are getting the response in json format.
