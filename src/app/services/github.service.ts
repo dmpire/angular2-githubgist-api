@@ -53,7 +53,7 @@ export class GithubService {
             .map(res => res.json());
     }
 
-    delUser(id:string) {
+    delUser(id: string) {
         return this._http.delete('https://api.github.com/gists/'+ id)
             .map(res => res.json());
     }

@@ -18,7 +18,7 @@
         </div>
     </div>
 </div>
-
+<!-- <app-create></app-create> -->
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title">GITHUB PUBLIC GISTS</h3>
@@ -27,9 +27,9 @@
         <div *ngFor="let gist of gists">
         <div class="row">
             <div class="col-sm-8">
-                <!-- <h3>Owners Username : {{gist.owner.login}}</h3> -->
-                <p>Project Description : {{gist.description}}</p>
-                <p>Date Created : {{gist.created_at}}</p>
+                <small><strong>Gist Id : </strong>{{gist.id}}</small>
+                <h4><strong>Project Description : </strong>{{gist.description}}</h4>
+                <p><strong>Date Created :</strong> {{gist.created_at}}</p><br>
                 <a class="btn btn-inverse btn-block" href="{{gist.html_url}}" target="_blank">
                     View Gists on Github
                 </a>

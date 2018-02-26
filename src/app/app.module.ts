@@ -4,13 +4,11 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent }  from './app.component';
 import { HomeComponent } from './home/home.homeComponent';
-import { Classes } from './classes';
 
 @NgModule({
   imports:      [ BrowserModule, HttpModule ],
   providers: [HttpModule],
-  declarations: [ AppComponent, HomeComponent , Classes],
-  bootstrap:    [ AppComponent ],
-  exports: [ Classes ]
+  declarations: [ AppComponent, HomeComponent ],
+  bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
