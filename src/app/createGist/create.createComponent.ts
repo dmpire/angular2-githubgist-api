@@ -5,10 +5,10 @@ import { HttpModule } from '@angular/http';
 
 @Component({
   moduleId: module.id,
-  selector: 'app-create',
+  // selector: 'app-create',
   templateUrl: 'create.createComponent.html',
   // directives: [HomeComponent],
   // When using a service, we add it as a provider.
   providers: [HttpModule, GithubService]
 })
-export class CreateComponent  { name = 'Angular'; }
+export class CreateComponent  { }

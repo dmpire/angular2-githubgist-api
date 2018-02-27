@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HomeComponent } from './home/home.homeComponent';
+import { CreateComponent } from './createGist/create.createComponent';
 import { GithubService } from './services/github.service';
 import { HttpModule } from '@angular/http';
 

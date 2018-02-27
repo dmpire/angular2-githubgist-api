@@ -13,26 +13,37 @@
         <div id="navbar" class="collapse navbar-collapse pull-right">
             <ul class="nav navbar-nav">
                 <li class="active">
-                    <a href="#">Home</a>
+                    <a routerLink="/">Public-Gist</a>
                 </li>
                 <li>
-                    <a href="#about">About</a>
+                    <a routerLink="/create-gist">Create-Gist</a>
                 </li>
                 <li>
-                    <a href="#contact">Contact</a>
+                    <a routerLink="/edit-gist">Edit-Gist</a>
+                </li>
+                <li>
+                    <a routerLink="/single-gist">Single-Gist</a>
                 </li>
             </ul>
         </div>
         <!--/.nav-collapse -->
     </div>
 </nav>
+<router-outlet></router-outlet>
+
 <div class="container">
     <main>
-        <h1>Hello World! </h1>
+        <h1>GITHUB PUBLIC GISTS </h1>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <app-home></app-home>
             </div>
         </div>
+
+        <!-- <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <app-create></app-create>
+                </div>
+            </div> -->
     </main>
 </div>

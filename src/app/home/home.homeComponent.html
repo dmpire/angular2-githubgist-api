@@ -1,5 +1,5 @@
 <!-- {{user.name}} -->
-<div *ngIf="user">
+<!-- <div *ngIf="user">
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">{{user.name}}</h3>
@@ -17,25 +17,27 @@
             </div>
         </div>
     </div>
-</div>
-<!-- <app-create></app-create> -->
+</div> -->
+
+<div *ngFor="let gist of gists">
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title">GITHUB PUBLIC GISTS</h3>
+        <h3 class="panel-title">Project Description : {{gist.description}}</h3>
     </div>
     <div class="panel-body">
-        <div *ngFor="let gist of gists">
-        <div class="row">
-            <div class="col-sm-8">
-                <small><strong>Gist Id : </strong>{{gist.id}}</small>
-                <h4><strong>Project Description : </strong>{{gist.description}}</h4>
-                <p><strong>Date Created :</strong> {{gist.created_at}}</p><br>
-                <a class="btn btn-inverse btn-block" href="{{gist.html_url}}" target="_blank">
-                    View Gists on Github
-                </a>
+        
+            <div class="row">
+                <div class="col-sm-8">
+                    <small>
+                        <strong>Gist Id : </strong>{{gist.id}}</small>
+                    <p>
+                        <strong>Date Created :</strong> {{gist.created_at}}</p>
+                    <br>
+                    <a class="btn btn-info btn-block" href="{{gist.html_url}}" target="_blank">
+                        View Gists on Github
+                    </a>
+                </div>
             </div>
         </div>
-        <hr>
     </div>
-    </div>
-</div> 
+</div>
