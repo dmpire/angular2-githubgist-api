@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {GithubService} from '../../services/github.service';
+import { GithubService } from '../../services/github.service';
+import { Gist } from '../../models/gist';
+import { GistFile } from '../../models/gist-file';
 
 @Component({
   selector: 'app-create-gist',
@@ -7,7 +9,7 @@ import {GithubService} from '../../services/github.service';
   styleUrls: ['./create-gist.component.css']
 })
 export class CreateGistComponent implements OnInit {
-  newGist: any;
+  newGist = new Gist();
 
   ngOnInit() {
   }
@@ -16,8 +18,19 @@ export class CreateGistComponent implements OnInit {
 
   }
 
- add() {
-   console.log(this.newGist);
- }
+  removeFile(i: number) {
+
+    console.log(this.newGist.files.length);
+
+    this.newGist.files.splice(i, 1);
+  }
+
+  addNewFile() {
+    this.newGist.files.push(new GistFile());
+  }
+  add() {
+    this._githubService.createGist(this.newGist).subscribe(res => console.log(res));
+    console.log(this.newGist);
+  }
 
 }

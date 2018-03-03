@@ -8,34 +8,46 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CreateGistComponent } from './components/create-gist/create-gist.component';
 
-import {GithubService} from './services/github.service';
+import { GithubService } from './services/github.service';
 import { HomeComponent } from './components/home/home.component';
+import { EditGistComponent } from './components/edit-gist/edit-gist.component';
+import { ListGistComponent } from './components/list-gist/list-gist.component';
 
 
 const appRoutes: Routes = [
   {
     path: '',
     component: HomeComponent
-},
-{
-  path: 'create-gist',
-  component: CreateGistComponent
-}
+  },
+  {
+    path: 'create-gist',
+    component: CreateGistComponent
+  },
+  {
+    path: 'edit-gist/:id',
+    component: EditGistComponent
+  },
+  {
+    path: 'list-gist',
+    component: ListGistComponent
+  }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateGistComponent,
-    HomeComponent
+    HomeComponent,
+    EditGistComponent,
+    ListGistComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(
-     appRoutes,
-  )
+      appRoutes,
+    )
   ],
   providers: [GithubService],
   bootstrap: [AppComponent]

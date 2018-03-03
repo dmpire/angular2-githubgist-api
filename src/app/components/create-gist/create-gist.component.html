@@ -1,25 +1,27 @@
 <h1>Create New Component</h1>
 <div class="container">
-    <div class="row">
-        <div class="col-md-offset-3 col-md-6">
-<form action=" " method="POST">
-    <div class="form-group">
-        <label for="desc">Description:</label>
-        <input type="text" [(ngModel)]="newGist.description" class="form-control" id="desc">
-    </div>
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6">
+      <form action=" " method="POST">
+        <div class="form-group">
+          <label for="desc">Description:</label>
+          <input type="text" [(ngModel)]="newGist.description" name="description" class="form-control" id="desc">
+        </div>
+        <div *ngFor="let file of newGist.files; let i=index">
+          <div class="form-group">
+            <label for="filename">File-name:</label>
+            <input type="text" [(ngModel)]="file.fileName" name="{{'fileName_'+i}}" class="form-control" id="filename">
+          </div>
+          <div class="form-group">
+            <label for="content">Content:</label>
+            <textarea name="content" [(ngModel)]="file.content" name="{{'content_'+i}}" class="form-control" id="content" rows="10"></textarea>
+          </div>
+          <button *ngIf="i>0" class="btn btn-warning" (click)="removeFile(i)">Remove file</button>
+        </div>
+        <button class="btn btn-default" (click)="addNewFile()">Add new file</button>
 
-    <div class="form-group">
-        <label for="filename">File-name:</label>
-        <input type="text" [(ngModel)]="newGist.fileName" class="form-control" id="filename">
+        <button type="submit" class="btn btn-default" (click)="add()">Submit</button>
+      </form>
     </div>
-
-    <div class="form-group">
-        <label for="content">Content:</label>
-        <textarea name="content" [(ngModel)]="newGist.content" class="form-control" id="content" rows="10"></textarea>
-    </div>
-
-    <button type="submit" class="btn btn-default" (click)="add()">Submit</button>
-</form>
-</div>
-</div>
+  </div>
 </div>

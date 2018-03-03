@@ -1,0 +1,8 @@
+<div *ngIf="gistList && gistList.length>0; else elseBlock" class="list-group">
+  <a *ngFor="let gist of gistList" href="" class="list-group-item list-group-item-action">
+    {{gist.description}}
+  </a>
+
+</div>
+
+<ng-template #elseBlock></ng-template>
