@@ -14,7 +14,9 @@ export class ListGistComponent implements OnInit {
   constructor(private _githubService: GithubService) { }
 
   ngOnInit() {
-    this._githubService.getUserGist().subscribe(res => this.gistList = res);
+    this._githubService.getUserGist().subscribe(res => {
+      this.gistList = res;
+    });
   }
 
 }

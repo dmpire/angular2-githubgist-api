@@ -12,6 +12,7 @@ import { GithubService } from './services/github.service';
 import { HomeComponent } from './components/home/home.component';
 import { EditGistComponent } from './components/edit-gist/edit-gist.component';
 import { ListGistComponent } from './components/list-gist/list-gist.component';
+import { SingleGistComponent } from './components/single-gist/single-gist.component';
 
 
 const appRoutes: Routes = [
@@ -30,6 +31,10 @@ const appRoutes: Routes = [
   {
     path: 'list-gist',
     component: ListGistComponent
+  },
+  {
+    path: 'single-gist/:id',
+    component: SingleGistComponent
   }
 ];
 
@@ -39,7 +44,8 @@ const appRoutes: Routes = [
     CreateGistComponent,
     HomeComponent,
     EditGistComponent,
-    ListGistComponent
+    ListGistComponent,
+    SingleGistComponent
   ],
   imports: [
     BrowserModule,
