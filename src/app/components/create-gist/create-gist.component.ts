@@ -9,9 +9,11 @@ import { GistFile } from '../../models/gist-file';
   styleUrls: ['./create-gist.component.css']
 })
 export class CreateGistComponent implements OnInit {
+
   newGist = new Gist();
 
   ngOnInit() {
+    this.newGist.files.push(new GistFile());
   }
 
   constructor(private _githubService: GithubService) {
