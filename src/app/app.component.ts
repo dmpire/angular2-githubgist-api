@@ -1,15 +1,10 @@
 import { Component } from '@angular/core';
-import { HomeComponent } from './home/home.homeComponent';
-import { CreateComponent } from './createGist/create.createComponent';
-import { GithubService } from './services/github.service';
-import { HttpModule } from '@angular/http';
-
+import { HomeComponent } from './components/home/home.component';
 @Component({
-  moduleId: module.id,
   selector: 'app-root',
-  templateUrl: 'app.component.html',
-  // directives: [HomeComponent],
-  // When using a service, we add it as a provider.
-  providers: [HttpModule, GithubService]
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent  { name = 'Angular'; }
+export class AppComponent {
+  title = 'app';
+}

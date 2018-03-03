@@ -5,20 +5,20 @@
 <form action=" " method="POST">
     <div class="form-group">
         <label for="desc">Description:</label>
-        <input type="text" [(ngModel)]="" class="form-control" id="desc">
+        <input type="text" [(ngModel)]="newGist.description" class="form-control" id="desc">
     </div>
 
     <div class="form-group">
         <label for="filename">File-name:</label>
-        <input type="text" [(ngModel)]="" class="form-control" id="filename">
+        <input type="text" [(ngModel)]="newGist.fileName" class="form-control" id="filename">
     </div>
 
     <div class="form-group">
         <label for="content">Content:</label>
-        <textarea name="content" [(ngModel)]="" class="form-control" id="content" rows="10"></textarea>
+        <textarea name="content" [(ngModel)]="newGist.content" class="form-control" id="content" rows="10"></textarea>
     </div>
 
-    <button type="submit" class="btn btn-default" (click)>Submit</button>
+    <button type="submit" class="btn btn-default" (click)="add()">Submit</button>
 </form>
 </div>
 </div>

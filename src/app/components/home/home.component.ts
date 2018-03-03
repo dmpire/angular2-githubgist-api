@@ -1,18 +1,21 @@
-import { Component } from '@angular/core';
-import { GithubService } from '../services/github.service';
-import 'rxjs/add/operator/map';
+import { Component, OnInit } from '@angular/core';
+import { GithubService } from '../../services/github.service';
 
 @Component({
-moduleId: module.id,
   selector: 'app-home',
-  templateUrl: 'home.homeComponent.html',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class HomeComponent  {
+export class HomeComponent implements OnInit {
+
   user: Array<any>;
   gists: Array<any>;
   usergist: Array<any>;
+
+  ngOnInit() {
+  }
   // Inject the service as a dependency
-  constructor( private _githubService: GithubService){
+  constructor( private _githubService: GithubService) {
     this._githubService.getUser().subscribe(user => {
       // console.log(user);
       this.user = user;
@@ -29,4 +32,4 @@ export class HomeComponent  {
     });
 
   }
- }
+}
