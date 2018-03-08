@@ -1,10 +1,11 @@
+<h2>GITHUB PUBLIC GISTS </h2>
 <div *ngFor="let gist of gists">
   <div class="panel panel-default">
       <div class="panel-heading">
           <h3 class="panel-title">Project Description : {{gist.description}}</h3>
       </div>
       <div class="panel-body">
-          
+
               <div class="row">
                   <div class="col-sm-8">
                       <small>
@@ -12,6 +13,9 @@
                       <p>
                           <strong>Date Created :</strong> {{gist.created_at}}</p>
                       <br>
+                      <!-- <p>
+                          <strong>Filename :</strong> {{gist.files.files[Object.keys(files)[0]].filename}}</p>
+                      <br> -->
                       <a class="btn btn-info btn-block" href="{{gist.html_url}}" target="_blank">
                           View Gists on Github
                       </a>

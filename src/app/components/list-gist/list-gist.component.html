@@ -1,7 +1,60 @@
-<div *ngIf="gistList && gistList.length>0; else elseBlock" class="list-group">
-  <a *ngFor="let gist of gistList" [routerLink]="['/single-gist/' + gist.id]" class="list-group-item list-group-item-action">
-    {{gist.description}}
-  </a>
-</div>
+<div *ngIf="user">
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h3 class="panel-title"><strong>{{user.name}}</strong></h3>
+      </div>
+      <div class="panel-body">
+
+              <div class="row">
+                  <div class="col-sm-4">
+                  	<img class="profile-img img-thumbnail" src="{{user.avatar_url}}" alt="Users Picture">
+                  	<a class="btn btn-default" href="{{user.html_url}}" target="_blank">View Github Profile</a>
+                  </div>
+
+                  <div class="col-sm-8">
+                      <div class="stats">
+                      	<span class="label label-success">{{user.public_gists}} Public Gists</span>
+                      	<span class="label label-warning">{{user.followers}} Followers</span>
+                      	<span class="label label-info">{{user.following}} Following</span>
+                      	<span class="label label-primary">{{user.public_repos}} Public Repos</span>
+                      </div>
+										<br>
+                      <ul class="list-group">
+                      	<li class="list-group-item"><strong>Username : </strong>{{user.login}}</li>
+                      	<li class="list-group-item"><strong>About : </strong>{{user.bio}}</li>
+                      	<li class="list-group-item"><strong>Location : </strong>{{user.location}}</li>
+                      	<li class="list-group-item"><strong>Member Since : </strong>{{user.created_at}}</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+
+
+<div *ngIf="gistList && gistList.length>0; else elseBlock">
+	<h3>Users Public Gists</h3>
+<div *ngFor="let gist of gistList" [routerLink]="['/single-gist/' + gist.id]">
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h3 class="panel-title"> <strong>{{gist.description}}</strong></h3>
+      </div>
+      <div class="panel-body">
+
+              <div class="row">
+											<ul class="list-group">
+                      	<li class="list-group-item"><strong>Gist ID : </strong>{{gist.id}}</li>
+                      	<li class="list-group-item"><strong>Date Created : </strong>{{gist.created_at}}</li>
+                      	<li class="list-group-item"><strong>Date Updated : </strong>{{gist.updated_at}}</li>
+                      	<li class="list-group-item"><strong>View Gist on Github : </strong><a href="{{gist.html_url}}" target="_blank">Click Here to View Gist on Github</a></li>
+                      </ul>
+              </div>
+          </div>
+      </div>
+	</div>
 
 <ng-template #elseBlock>No gist for user</ng-template>
+
+</div>
